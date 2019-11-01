@@ -1,5 +1,6 @@
-namespace SchosslerBank
+namespace SchosslerBank.Dominio
 {
+
     class Cliente
     {
         public string nome;
@@ -7,4 +8,5 @@ namespace SchosslerBank
         public string rg;
         public string endereco;
     }
+
 }

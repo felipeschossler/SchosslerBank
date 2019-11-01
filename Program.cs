@@ -9,14 +9,14 @@ namespace SchosslerBank
         {
             Conta c = new Conta();
             Conta d = new Conta();
+            
+            c.Depositar(100);
+            d.Depositar(150);
 
-            c.saldo = 100;
-            d.saldo = 150;
+            c.Transferir(d, 50);
 
-            c.Tranferir(d, 50);
-
-            Console.WriteLine($"Valor de c = {c.saldo}");
-            Console.WriteLine($"Valor de d = {d.saldo}");
+            Console.WriteLine($"Valor de c = {c.Saldo}");
+            Console.WriteLine($"Valor de d = {d.Saldo}");
         }
     }
 }

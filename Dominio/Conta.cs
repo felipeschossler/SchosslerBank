@@ -5,32 +5,42 @@ namespace SchosslerBank.Dominio
 
     class Conta
     {
-        public int numero;
-        public Cliente titular;
-        public double saldo;
+        public int Numero { get; set; }
+        public Cliente Titular { get; set; }
+        public double Saldo { get; protected set; }
 
         public bool Sacar(double valor)
         {
-            if (this.saldo > valor)
+            if (this.Saldo > valor)
             {
-                this.saldo -= valor;
+                this.Saldo -= valor;
                 return true;
             }
-            Console.WriteLine("O valor é maior que o saldo em conta");
-            return false;
+            else
+            {
+                Console.WriteLine("O valor é maior que o saldo em conta");
+                return false;
+            }
         }
 
-        public void Depositar(double valor)
+        public bool Depositar(double valor)
         {
-            this.saldo += valor;
+            this.Saldo += valor;
+            return true;
         }
 
-        public void Tranferir(Conta contaDestino, double valor)
+        public bool Transferir(Conta contaDestino, double valor)
         {
             if (this.Sacar(valor))
             {
                 contaDestino.Depositar(valor);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
+        
     }
 }
