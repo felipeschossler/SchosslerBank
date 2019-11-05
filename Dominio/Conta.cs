@@ -9,6 +9,12 @@ namespace SchosslerBank.Dominio
         public Cliente Titular { get; set; }
         public double Saldo { get; protected set; }
 
+        public Conta(int numero, Cliente cliente)
+        {
+            this.Numero = numero;
+            this.Titular = cliente;
+        }
+
         public bool Sacar(double valor)
         {
             if (this.Saldo > valor)
@@ -41,6 +47,6 @@ namespace SchosslerBank.Dominio
                 return false;
             }
         }
-        
+
     }
 }

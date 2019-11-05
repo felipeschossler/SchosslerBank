@@ -7,9 +7,15 @@ namespace SchosslerBank
     {
         static void Main(string[] args)
         {
-            Conta c = new Conta();
-            Conta d = new Conta();
+            Cliente felipe = new Cliente("Felipe", "845884620981");
+            Cliente jose = new Cliente("Jose", "8569894641");
+            Conta c = new Conta(12321, felipe);
+            Conta d = new Conta(6666345, jose);
             
+            Console.WriteLine("Nome conta c: " + felipe.Nome);
+            Console.WriteLine("CPF conta c: " + felipe.Cpf);
+            Console.WriteLine("Nome conta d: " + jose.Nome);
+            Console.WriteLine("CPF conta d: " + jose.Cpf);
             c.Depositar(100);
             d.Depositar(150);
 
